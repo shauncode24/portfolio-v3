@@ -1,23 +1,22 @@
 .homepage-container {
     position: relative;
     min-height: 100vh;
-    background: radial-gradient(ellipse at top left,
-            #0B0D24 0%,
-            #070816 45%,
-            #04040B 100%);
-
-    background-size: 100% 100%;
-    background-position: center;
+    background: radial-gradient(ellipse at center,
+            #140B2E 0%,
+            #0B0820 45%,
+            #05040F 100%);
     overflow: hidden;
+    animation: background-breathe 90s ease-in-out infinite;
 }
+
 
 .homepage-container::after {
     content: "";
     position: absolute;
     inset: 0;
     background: radial-gradient(circle at center,
-            transparent 40%,
-            rgba(10, 10, 18, 0.5) 100%);
+            transparent 30%,
+            rgba(6, 4, 18, 0.6) 100%);
     pointer-events: none;
 }
 
@@ -30,6 +29,12 @@
     z-index: 3;
     pointer-events: none;
 }
+
+.light-pillar-wrapper {
+    opacity: 0.7;
+    filter: blur(0.3px);
+}
+
 
 .particles-wrapper {
     position: absolute;
@@ -51,4 +56,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+
+@keyframes background-breathe {
+    0% {
+        filter: brightness(1) saturate(1);
+    }
+
+    50% {
+        filter: brightness(1.04) saturate(1.03);
+    }
+
+    100% {
+        filter: brightness(1) saturate(1);
+    }
 }

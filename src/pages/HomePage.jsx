@@ -22,12 +22,12 @@ export default function HomePage() {
           <LightPillar
             topColor="#5227FF"
             bottomColor="#FF9FFC"
-            intensity={0.35}
+            intensity={0.37}
             rotationSpeed={0.5}
-            glowAmount={0.002}
+            glowAmount={0.0016}
             pillarWidth={4.0}
             pillarHeight={0.4}
-            noiseIntensity={0.1}
+            noiseIntensity={0.75}
             pillarRotation={75}
             interactive={false}
             mixBlendMode="normal"
