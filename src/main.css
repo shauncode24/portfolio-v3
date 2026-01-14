@@ -1,0 +1,27 @@
+html {
+    width: 100%;
+}
+
+#root {
+    width: 100%;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #05060A;
+    margin: 0;
+    padding: 0;
+    font-family: "Google Sans Flex", sans-serif;
+    overflow-x: hidden;
+}
+
+.default {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.body-specific {
+    justify-content: flex-start;
+}
