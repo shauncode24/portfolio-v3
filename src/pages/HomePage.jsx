@@ -4,8 +4,36 @@ import Starfield from "../components/Homepage/Starfield";
 import LightPillar from '../components/Homepage/LightPillar';
 import GlassSurface from '../components/Homepage/GlassSurface';
 import { LightBeam } from "@stianlarsen/react-light-beam";
+import { useState, useEffect } from 'react';
+import BlurText from '../components/Homepage/BlurText';
 
 export default function HomePage() {
+  const [glassSize, setGlassSize] = useState({ width: 550, height: 550 });
+
+  useEffect(() => {
+    const updateGlassSize = () => {
+      const width = window.innerWidth;
+
+      if (width <= 360) {
+        setGlassSize({ width: 300, height: 300 });
+      } else if (width <= 480) {
+        setGlassSize({ width: 350, height: 350 });
+      } else if (width <= 640) {
+        setGlassSize({ width: 400, height: 400 });
+      } else if (width <= 768) {
+        setGlassSize({ width: 450, height: 450 });
+      } else if (width <= 1024) {
+        setGlassSize({ width: 450, height: 450 });
+      } else {
+        setGlassSize({ width: 550, height: 550 });
+      }
+    };
+
+    updateGlassSize();
+    window.addEventListener('resize', updateGlassSize);
+    return () => window.removeEventListener('resize', updateGlassSize);
+  }, []);
+
   return (
     <>
       <div className="default homepage-container">
@@ -24,7 +52,7 @@ export default function HomePage() {
             pillarWidth={4.0}
             pillarHeight={0.4}
             noiseIntensity={0.75}
-            pillarRotation={-75}
+            pillarRotation={-70}
             interactive={false}
             mixBlendMode="normal"
           />
@@ -48,27 +76,27 @@ export default function HomePage() {
         </div>
 
         <div className="hero-text">
-          <span className="hero-eyebrow">
-            Inspire to Create
-          </span>
+
+          <span className="hero-eyebrow">INSPIRE TO CREATE</span>
 
           <h1 className="hero-heading">
-            Shaunak Karve
+            Shaunak <br />Karve
           </h1>
 
           <p className="hero-subtext">
-            Designing and engineering web experiences
-            with an emphasis on clarity, performance,
-            and thoughtful interaction.
+            Designing and engineering web experiences with an emphasis on
+            clarity, performance, and thoughtful interaction.
           </p>
 
-          <div className="hero-cta">
+          {/* <div className="hero-cta">
             <button className="hero-primary">Explore</button>
-            <a href="#" className="hero-secondary">What do we do</a>
-          </div>
+            <a className="hero-secondary">What I Do</a>
+          </div> */}
+          {/* <img src="https://t3.ftcdn.net/jpg/08/09/58/06/360_F_809580697_HrJHtfi3HK97lZu8x7GieptgwShcJbl1.jpg" alt="" className="astronaut" /> */}
+
         </div>
 
-        <img src="https://pngimg.com/d/astronaut_PNG29.png" alt="" className="astronaut" />
+
 
       </div>
 
@@ -79,9 +107,9 @@ export default function HomePage() {
 
       <div className="glass-surface-wrapper">
         <GlassSurface
-          width={550}
-          height={550}
-          borderRadius={275}
+          width={glassSize.width}
+          height={glassSize.height}
+          borderRadius={glassSize.width / 2}
           distortionScale={-150}
           // redOffset={50}
           greenOffset={15}
