@@ -3,9 +3,7 @@ import GlowOrb from "../components/Homepage/GlowOrb";
 import Starfield from "../components/Homepage/Starfield";
 import LightPillar from '../components/Homepage/LightPillar';
 import GlassSurface from '../components/Homepage/GlassSurface';
-import { LightBeam } from "@stianlarsen/react-light-beam";
 import { useState, useEffect } from 'react';
-import BlurText from '../components/Homepage/BlurText';
 
 export default function HomePage() {
   const [glassSize, setGlassSize] = useState({ width: 550, height: 550 });
@@ -47,7 +45,7 @@ export default function HomePage() {
             topColor="#5227FF"
             bottomColor="#FF9FFC"
             intensity={0.37}
-            rotationSpeed={0.5}
+            rotationSpeed={0.7}
             glowAmount={0.0016}
             pillarWidth={4.0}
             pillarHeight={0.4}
@@ -62,10 +60,10 @@ export default function HomePage() {
           <svg height="200" width="200" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <radialGradient id="grad" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
-                <stop offset="4=30%" stop-color="#40ffff" stop-opacity="0.8" />
-                <stop offset="50%" stop-color="#0099ff" stop-opacity="0.7" />
-                <stop offset="100%" stop-color="#0066cc" stop-opacity="0" />
+                <stop offset="0%" stopColor="#ffffff" stopOpacity="1" />
+                <stop offset="30%" stopColor="#40ffff" stopOpacity="0.8" />
+                <stop offset="50%" stopColor="#0099ff" stopOpacity="0.7" />
+                <stop offset="100%" stopColor="#0066cc" stopOpacity="0" />
               </radialGradient>
             </defs>
             <path
@@ -76,7 +74,6 @@ export default function HomePage() {
         </div>
 
         <div className="hero-text">
-
           <span className="hero-eyebrow">INSPIRE TO CREATE</span>
 
           <h1 className="hero-heading">
@@ -88,22 +85,16 @@ export default function HomePage() {
             clarity, performance, and thoughtful interaction.
           </p>
 
-          {/* <div className="hero-cta">
-            <button className="hero-primary">Explore</button>
-            <a className="hero-secondary">What I Do</a>
-          </div> */}
-          {/* <img src="https://t3.ftcdn.net/jpg/08/09/58/06/360_F_809580697_HrJHtfi3HK97lZu8x7GieptgwShcJbl1.jpg" alt="" className="astronaut" /> */}
-
+          <div className="proceed-section">
+            <span className="proceed-label">Proceed.</span>
+            <button className="enter-button">Enter</button>
+          </div>
         </div>
-
-
-
       </div>
 
       <div className="particles-wrapper">
         <Starfield starCount={150} />
       </div>
-
 
       <div className="glass-surface-wrapper">
         <GlassSurface
@@ -111,16 +102,11 @@ export default function HomePage() {
           height={glassSize.height}
           borderRadius={glassSize.width / 2}
           distortionScale={-150}
-          // redOffset={50}
           greenOffset={15}
           blueOffset={50}
-          // brightness={100}
           opacity={0.8}
           mixBlendMode="screen"
-        >
-        </GlassSurface>
-
-
+        />
       </div>
     </>
   );
