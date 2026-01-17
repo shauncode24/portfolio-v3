@@ -1,19 +1,81 @@
 import SimpleProjectBox from "@/components/Projects/SimpleProjectBox";
 import './ProjectsPage.css';
-import LiquidChrome from '@/components/LiquidChrome';
-import Starfield from '@/components/Homepage/Starfield';
+import projectBg from '@/assets/project_bg.jpg';
 
 export default function ProjectsPage() {
     return (
         <div className="default projects-page">
-            <div style={{ width: '100vw', height: '100vh', position: 'relative', opacity: '0.6' }}>
-                <LiquidChrome interactive={false} baseColor={[0.0392, 0.1216, 0.3647]} />
-                <Starfield starCount={200} />
+            <div className="projects-background" style={{
+                backgroundImage: `url(${projectBg})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                width: '100vw',
+                height: '100vh',
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                zIndex: 0
+            }}>
+                <div style={{
+                    position: 'absolute',
+                    inset: 0,
+                    backdropFilter: 'blur(4px) saturate(120%)',
+                    WebkitBackdropFilter: 'blur(8px) saturate(120%)',
+                    background: 'rgba(10, 31, 93, 0.3)',
+                    zIndex: 1
+                }} />
             </div>
-            <SimpleProjectBox className="project-box-1" title="Project 1" />
-            <SimpleProjectBox className="project-box-2" title="Project 2" />
-            <SimpleProjectBox className="project-box-3" title="Project 3" />
-            <SimpleProjectBox className="project-box-4" title="Project 4" />
+
+            {/* Page Header */}
+            <div className="default projects-header">
+                <h1 className="projects-main-title">Projects</h1>
+                <p className="projects-subtitle">Explore my latest work and creations</p>
+            </div>
+
+            {/* Projects Grid */}
+            <div className="projects-grid">
+                <SimpleProjectBox
+                    className="project-card-large"
+                    projectNumber="01"
+                    title="AI-Powered Analytics Dashboard"
+                    description="A comprehensive analytics platform leveraging machine learning to provide real-time insights and predictive analytics for enterprise clients."
+                    tags={["REACT", "NODE.JS", "AI"]}
+                    gradient="linear-gradient(180deg, rgba(99, 102, 241, 0.3) 0%, rgba(139, 92, 246, 0.3) 100%)"
+                />
+                <SimpleProjectBox
+                    className="project-card-medium"
+                    projectNumber="02"
+                    title="Fitness Tracking App"
+                    description="iOS application with AI features for personalized workout routines and progress tracking."
+                    tags={["MOBILE", "SWIFT"]}
+                    gradient="linear-gradient(180deg, rgba(236, 72, 153, 0.3) 0%, rgba(239, 68, 68, 0.3) 100%)"
+                />
+                <SimpleProjectBox
+                    className="project-card-small"
+                    projectNumber="03"
+                    title="E-Commerce Platform"
+                    description="Modern shopping experience with real-time inventory management and AI recommendations."
+                    tags={["VUE.JS", "FIREBASE"]}
+                    gradient="linear-gradient(180deg, rgba(6, 182, 212, 0.3) 0%, rgba(14, 165, 233, 0.3) 100%)"
+                />
+                <SimpleProjectBox
+                    className="project-card-small"
+                    projectNumber="04"
+                    title="Brand Identity System"
+                    description="Complete design system for a fintech startup including logo, components, and guidelines."
+                    tags={["DESIGN", "FIGMA"]}
+                    gradient="linear-gradient(180deg, rgba(251, 146, 60, 0.3) 0%, rgba(251, 191, 36, 0.3) 100%)"
+                />
+                <SimpleProjectBox
+                    className="project-card-small"
+                    projectNumber="05"
+                    title="Image Recognition Model"
+                    description="Deep learning model for medical image analysis with 95% accuracy rate."
+                    tags={["PYTHON", "TENSORFLOW"]}
+                    gradient="linear-gradient(180deg, rgba(52, 211, 153, 0.3) 0%, rgba(59, 130, 246, 0.3) 100%)"
+                />
+            </div>
         </div>
     );
 }
