@@ -1,31 +1,32 @@
 import SimpleProjectBox from "@/components/Projects/SimpleProjectBox";
 import './ProjectsPage.css';
 import projectBg from '@/assets/project_bg.jpg';
+import Iridescence from '@/components/Iridescence';
+import Starfield from '@/components/Homepage/Starfield';
 
 export default function ProjectsPage() {
     return (
         <div className="default projects-page">
-            <div className="projects-background" style={{
-                backgroundImage: `url(${projectBg})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat',
-                width: '100vw',
-                height: '100vh',
-                position: 'fixed',
-                top: 0,
-                left: 0,
-                zIndex: 0
-            }}>
-                <div style={{
-                    position: 'absolute',
-                    inset: 0,
-                    backdropFilter: 'blur(6px) saturate(120%)',
-                    WebkitBackdropFilter: 'blur(8px) saturate(120%)',
-                    background: 'rgba(10, 31, 93, 0.3)',
-                    zIndex: 1
-                }} />
-            </div>
+            {/* Iridescence Background */}
+            <Iridescence
+                color={[1, 1, 1]} // #000000ff
+                mouseReact={false}
+                amplitude={1}
+                speed={1.0}
+            />
+
+            {/* Starfield Overlay */}
+            <Starfield />
+
+            <div style={{
+                position: 'absolute',
+                inset: 0,
+                backdropFilter: 'blur(2px)',
+                WebkitBackdropFilter: 'blur(8px) saturate(120%)',
+                background: 'rgba(10, 31, 93, 0.3)',
+                zIndex: 1
+            }} />
+
 
             {/* Page Header */}
             <div className="default projects-header">
