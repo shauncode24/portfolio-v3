@@ -1,0 +1,20 @@
+/* Rotating Text Inline Styling */
+.rotating-text-inline {
+  display: inline-flex;
+  color: #c084fc; /* Fallback solid color */
+  font-weight: 600;
+  position: relative;
+  min-width: 80px;
+  justify-content: flex-start;
+}
+
+/* Gradient text where supported */
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  .rotating-text-inline {
+    background: linear-gradient(135deg, #a78bfa 0%, #c084fc 50%, #e879f9 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+}

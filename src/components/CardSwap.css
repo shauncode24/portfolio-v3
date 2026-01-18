@@ -1,0 +1,62 @@
+.card-swap-container {
+  position: absolute;
+  top: 25%;
+  right: 10%;
+  transform-origin: bottom right;
+  perspective: 900px;
+  overflow: visible;
+}
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 12px;
+  border: 1px solid #fff;
+  background: #000;
+
+  transform-style: preserve-3d;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Tablet and smaller screens */
+@media (max-width: 1024px) {
+  .card-swap-container {
+    top: 0;
+    right: 0;
+    transform: scale(0.5);
+    transform-origin: top right;
+  }
+}
+
+/* Mobile landscape and smaller tablets */
+@media (max-width: 768px) {
+  .card-swap-container {
+    top: 20%;
+    right: 10%;
+    transform: scale(0.35);
+    transform-origin: top right;
+  }
+}
+
+/* Mobile portrait */
+@media (max-width: 480px) {
+  .card-swap-container {
+    top: 20%;
+    right: 10%;
+    transform: scale(0.5);
+    transform-origin: top right;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+  .card-swap-container {
+    top: 0;
+    right: 0;
+    transform: scale(0.25);
+    transform-origin: top right;
+  }
+}
