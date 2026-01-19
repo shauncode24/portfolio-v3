@@ -4,9 +4,12 @@ import Starfield from "../components/Homepage/Starfield";
 import LightPillar from '../components/Homepage/LightPillar';
 import GlassSurface from '../components/Homepage/GlassSurface';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function HomePage() {
   const [glassSize, setGlassSize] = useState({ width: 550, height: 550 });
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const updateGlassSize = () => {
@@ -32,9 +35,33 @@ export default function HomePage() {
     return () => window.removeEventListener('resize', updateGlassSize);
   }, []);
 
+  useEffect(() => {
+    if (isTransitioning) {
+      // Navigate after zoom and blur completes (6 seconds animation + 1 second delay)
+      const timer = setTimeout(() => {
+        navigate('/index');
+      }, 7000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [isTransitioning, navigate]);
+
+  const handleEnterClick = () => {
+    setIsTransitioning(true);
+  };
+
   return (
     <>
-      <div className="default homepage-container">
+      {/* Transition overlay with abundant stars */}
+      {isTransitioning && (
+        <div className="transition-star-overlay">
+          <Starfield starCount={5000} />
+        </div>
+      )}
+
+      <div
+        className={`default homepage-container ${isTransitioning ? 'zooming-out' : ''}`}
+      >
         <GlowOrb className="glow-orb-1" />
         <GlowOrb className="glow-orb-2" />
         <GlowOrb className="glow-orb-3" />
@@ -87,7 +114,7 @@ export default function HomePage() {
 
           <div className="proceed-section">
             <span className="proceed-label">Proceed.</span>
-            <button className="enter-button">Enter</button>
+            <button className="enter-button" onClick={handleEnterClick}>Enter</button>
           </div>
         </div>
       </div>
