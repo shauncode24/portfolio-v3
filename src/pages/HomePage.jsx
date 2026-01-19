@@ -5,6 +5,7 @@ import LightPillar from '../components/Homepage/LightPillar';
 import GlassSurface from '../components/Homepage/GlassSurface';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import CosmicScene from "@/components/CosmicTransition/CosmicScene";
 
 export default function HomePage() {
   const [glassSize, setGlassSize] = useState({ width: 550, height: 550 });
@@ -37,7 +38,7 @@ export default function HomePage() {
 
   useEffect(() => {
     if (isTransitioning) {
-      // Navigate after zoom and blur completes (6 seconds animation + 1 second delay)
+      // Navigate after transition completes (7 seconds)
       const timer = setTimeout(() => {
         navigate('/index');
       }, 7000);
@@ -52,15 +53,12 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Transition overlay with abundant stars */}
-      {isTransitioning && (
-        <div className="transition-star-overlay">
-          <Starfield starCount={5000} />
-        </div>
-      )}
+      {/* Telescope Transition - Three.js scene */}
+      {isTransitioning && <CosmicScene />}
 
+      {/* Original Homepage Content */}
       <div
-        className={`default homepage-container ${isTransitioning ? 'zooming-out' : ''}`}
+        className={`default homepage-container ${isTransitioning ? 'transitioning' : ''}`}
       >
         <GlowOrb className="glow-orb-1" />
         <GlowOrb className="glow-orb-2" />
@@ -104,7 +102,8 @@ export default function HomePage() {
           <span className="hero-eyebrow">INSPIRE TO CREATE</span>
 
           <h1 className="hero-heading">
-            Shaunak <br />Karve
+            Shaunak <br />
+            Karve
           </h1>
 
           <p className="hero-subtext">
