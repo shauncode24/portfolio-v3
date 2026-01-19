@@ -1,3 +1,4 @@
+import React from 'react';
 import LogoLoop from '../LogoLoop';
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiNodedotjs, SiMongodb, SiPostgresql, SiDocker } from 'react-icons/si';
 import './SkillsCard.css';
@@ -15,22 +16,63 @@ const techLogos = [
 
 const SkillsCard = ({ card }) => {
     return (
-        <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', position: 'relative', overflow: 'hidden' }}>
-            <div className="magic-bento-card__header">
-                <div className="magic-bento-card__label">{card.label}</div>
-            </div>
-            <div style={{ flex: 1, display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
-                <LogoLoop
-                    logos={techLogos}
-                    speed={60}
-                    direction="left"
-                    logoHeight={40}
-                    gap={50}
-                    hoverSpeed={20}
-                    scaleOnHover
-                    fadeOut={false}
-                    ariaLabel="Technology stack"
-                />
+        <div className="skills-container">
+            <div className="skills-card">
+                {/* Top Section - Header & Stats */}
+                <div className="skills-header">
+                    <div className="skills-title-section">
+                        <h2 className="skills-title">
+                            Expertise & Tools
+                        </h2>
+                    </div>
+                </div>
+
+                {/* Middle Section - Logo Loop */}
+                <div className="skills-logos-section">
+                    <LogoLoop
+                        logos={techLogos}
+                        speed={60}
+                        direction="left"
+                        logoHeight={40}
+                        gap={50}
+                        hoverSpeed={20}
+                        scaleOnHover
+                        fadeOut={false}
+                        ariaLabel="Technology stack"
+                    />
+                </div>
+
+                {/* Bottom Section - Categories */}
+                <div className="skills-categories">
+                    <div className="category-item">
+                        <div className="category-icon">⚡</div>
+                        <div className="category-text">
+                            <div className="category-title">Frontend</div>
+                            <div className="category-desc">Modern UI/UX</div>
+                        </div>
+                    </div>
+                    <div className="category-item">
+                        <div className="category-icon">🔧</div>
+                        <div className="category-text">
+                            <div className="category-title">Backend</div>
+                            <div className="category-desc">Scalable APIs</div>
+                        </div>
+                    </div>
+                    <div className="category-item">
+                        <div className="category-icon">🗄️</div>
+                        <div className="category-text">
+                            <div className="category-title">Database</div>
+                            <div className="category-desc">Data Management</div>
+                        </div>
+                    </div>
+                    <div className="category-item">
+                        <div className="category-icon">☁️</div>
+                        <div className="category-text">
+                            <div className="category-title">DevOps</div>
+                            <div className="category-desc">CI/CD Pipeline</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );

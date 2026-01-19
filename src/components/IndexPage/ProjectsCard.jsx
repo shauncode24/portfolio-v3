@@ -35,7 +35,7 @@ const ProjectsCard = () => {
     ];
 
     return (
-        <div className="projects-container">
+        <div className="default projects-container">
             <div className="projects-card">
                 {/* Left Column - Info */}
                 <div className="projects-info">
