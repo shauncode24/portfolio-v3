@@ -24,6 +24,9 @@ const SkillsCard = ({ card }) => {
                         <h2 className="skills-title">
                             Expertise & Tools
                         </h2>
+                        <p className="skills-description">
+                            Passionate about building modern, scalable applications with cutting-edge technologies.
+                        </p>
                     </div>
                 </div>
 
@@ -40,38 +43,6 @@ const SkillsCard = ({ card }) => {
                         fadeOut={false}
                         ariaLabel="Technology stack"
                     />
-                </div>
-
-                {/* Bottom Section - Categories */}
-                <div className="skills-categories">
-                    <div className="category-item">
-                        <div className="category-icon">⚡</div>
-                        <div className="category-text">
-                            <div className="category-title">Frontend</div>
-                            <div className="category-desc">Modern UI/UX</div>
-                        </div>
-                    </div>
-                    <div className="category-item">
-                        <div className="category-icon">🔧</div>
-                        <div className="category-text">
-                            <div className="category-title">Backend</div>
-                            <div className="category-desc">Scalable APIs</div>
-                        </div>
-                    </div>
-                    <div className="category-item">
-                        <div className="category-icon">🗄️</div>
-                        <div className="category-text">
-                            <div className="category-title">Database</div>
-                            <div className="category-desc">Data Management</div>
-                        </div>
-                    </div>
-                    <div className="category-item">
-                        <div className="category-icon">☁️</div>
-                        <div className="category-text">
-                            <div className="category-title">DevOps</div>
-                            <div className="category-desc">CI/CD Pipeline</div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

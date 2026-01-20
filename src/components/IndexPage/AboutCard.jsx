@@ -98,8 +98,8 @@ const AboutCard = () => {
                             <span>Based in Mumbai, India</span>
                         </div>
                         <p className="bio">
-                            Crafting elegant solutions through code. Passionate about building seamless user
-                            experiences and scalable systems.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, sint explicabo. Doloremque necessitatibus laborum ab asperiores aut libero explicabo voluptas! Soluta vitae odit accusantium iusto explicabo nihil architecto perferendis eaque!
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error, itaque nostrum ipsum dolor asperiores autem iusto enim tenetur illo ipsa dignissimos mollitia, facilis sint minus cum modi, reprehenderit expedita magnam!
                         </p>
                         <div className="role-line">
                             <span className="role-text">Besides, I love </span>

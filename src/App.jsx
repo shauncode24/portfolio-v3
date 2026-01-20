@@ -4,6 +4,7 @@ import ProjectsPage from "./pages/ProjectsPage";
 import IndexPage from "./pages/IndexPage";
 import SkillsPage from "./pages/SkillsPage";
 import GalleryPage from "./pages/GalleryPage";
+import AboutMe from "./pages/AboutMe";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
         <Route path="/index" element={<IndexPage />} />
         <Route path="/skills" element={<SkillsPage />} />
         <Route path="/gallery" element={<GalleryPage />} />
+        <Route path="/about" element={<AboutMe />} />
       </Routes>
     </BrowserRouter>
   );
