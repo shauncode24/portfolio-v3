@@ -5,27 +5,36 @@ import SkillsCard from '@/components/AboutMe/SkillsCard';
 import ContactCard from '@/components/AboutMe/ContactCard';
 import LightRays from '@/components/Global/LightRays';
 import LightPillar from '@/components/Homepage/LightPillar';
+import Starfield from '@/components/Homepage/Starfield';
+import Iridescence from '@/components/Iridescence';
 
 function AboutMe() {
 
     return (
         <div className="about-me-container">
             <div className="plasma-container-main">
-                <LightRays
+                {/* <LightRays
                     raysOrigin="top-center"
                     raysColor="#ffffff"
                     raysSpeed={0.5}
                     lightSpread={0.5}
                     rayLength={3}
-                    followMouse={true}
-                    mouseInfluence={0.1}
+                    followMouse={false}
+                    mouseInfluence={0}
                     noiseAmount={0}
                     distortion={0}
                     className="custom-rays"
                     pulsating={false}
                     fadeDistance={1}
                     saturation={1}
+                /> */}
+                <Iridescence
+                    color={[1, 1, 1]}
+                    mouseReact
+                    amplitude={0.1}
+                    speed={1}
                 />
+                {/* <Starfield starCount={1000} /> */}
                 {/* <Plasma
                     color="#1a1a3e"
                     speed={0.3}
@@ -34,7 +43,7 @@ function AboutMe() {
                     opacity={0.7}
                     mouseInteractive={true}
                 /> */}
-                <LightPillar
+                {/* <LightPillar
                     topColor="#4a6fa5"
                     bottomColor="#1e3a5f"
                     intensity={1.2}
@@ -47,7 +56,7 @@ function AboutMe() {
                     interactive={false}
                     mixBlendMode="screen"
                     quality="high"
-                />
+                /> */}
 
 
                 {/* <img className="background-img" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dW5pdmVyc2UlMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D" alt="" /> */}

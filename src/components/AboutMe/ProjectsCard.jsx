@@ -73,7 +73,7 @@ const ProjectsCard = () => {
                             verticalDistance={25}
                             delay={3000}
                             pauseOnHover={true}
-                            easing="elastic"
+                            easing="smooth"
                         >
                             <Card style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: '20px', fontWeight: 'bold' }}>
                                 Card 1
