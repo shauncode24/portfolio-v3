@@ -1,5 +1,5 @@
 import React from 'react';
-import CardSwap, { Card } from '../CardSwap';
+import CardSwap, { Card } from '../Global/CardSwap';
 import './ProjectsCard.css';
 
 const ProjectsCard = () => {

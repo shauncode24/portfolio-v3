@@ -5,7 +5,6 @@ import LightPillar from '../components/Homepage/LightPillar';
 import GlassSurface from '../components/Homepage/GlassSurface';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import CosmicScene from "@/components/CosmicTransition/CosmicScene";
 
 export default function HomePage() {
   const [glassSize, setGlassSize] = useState({ width: 550, height: 550 });
@@ -38,10 +37,10 @@ export default function HomePage() {
 
   useEffect(() => {
     if (isTransitioning) {
-      // Navigate after transition completes (7 seconds)
+      // Navigate after fade transition (1 second)
       const timer = setTimeout(() => {
         navigate('/index');
-      }, 7000);
+      }, 1000);
 
       return () => clearTimeout(timer);
     }
@@ -53,10 +52,7 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Telescope Transition - Three.js scene */}
-      {isTransitioning && <CosmicScene />}
-
-      {/* Original Homepage Content */}
+      {/* Homepage Content */}
       <div
         className={`default homepage-container ${isTransitioning ? 'transitioning' : ''}`}
       >

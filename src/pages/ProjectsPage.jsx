@@ -1,19 +1,19 @@
 import SimpleProjectBox from "@/components/Projects/SimpleProjectBox";
 import './ProjectsPage.css';
 import projectBg from '@/assets/project_bg.jpg';
-import Iridescence from '@/components/Iridescence';
+// import Iridescence from '@/components/Global/Iridescence';
 import Starfield from '@/components/Homepage/Starfield';
 
 export default function ProjectsPage() {
     return (
         <div className="default projects-page">
             {/* Iridescence Background */}
-            <Iridescence
+            {/* <Iridescence
                 color={[1, 1, 1]} // #000000ff
                 mouseReact={false}
                 amplitude={1}
                 speed={1.0}
-            />
+            /> */}
 
             {/* Starfield Overlay */}
             <Starfield />

@@ -1,13 +1,9 @@
 import React from 'react';
 import './AboutMe.css';
-import IndexPage from './IndexPage';
-import AboutCard from '@/components/IndexPage/AboutCard';
-import ProjectsCard from '@/components/IndexPage/ProjectsCard';
-import SkillsCard from '@/components/IndexPage/SkillsCard';
-import ContactCard from '@/components/IndexPage/ContactCard';
-import Plasma from '@/components/Plasma';
-import LightRays from '@/components/LightRays';
-import LiquidChrome from '@/components/LiquidChrome';
+import ProjectsCard from '@/components/AboutMe/ProjectsCard';
+import SkillsCard from '@/components/AboutMe/SkillsCard';
+import ContactCard from '@/components/AboutMe/ContactCard';
+import LightRays from '@/components/Global/LightRays';
 import LightPillar from '@/components/Homepage/LightPillar';
 
 function AboutMe() {

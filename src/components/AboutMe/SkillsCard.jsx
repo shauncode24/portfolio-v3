@@ -1,5 +1,5 @@
 import React from 'react';
-import LogoLoop from '../LogoLoop';
+import LogoLoop from '../Global/LogoLoop';
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiNodedotjs, SiMongodb, SiPostgresql, SiDocker } from 'react-icons/si';
 import './SkillsCard.css';
 
@@ -14,7 +14,7 @@ const techLogos = [
     { node: <SiDocker size={40} />, title: "Docker", href: "https://www.docker.com" },
 ];
 
-const SkillsCard = ({ card }) => {
+const SkillsCard = () => {
     return (
         <div className="skills-container">
             <div className="skills-card">
