@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import LogoLoop from '../Global/LogoLoop';
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiNodedotjs, SiMongodb, SiPostgresql, SiDocker } from 'react-icons/si';
 import './SkillsCard.css';
@@ -15,6 +16,8 @@ const techLogos = [
 ];
 
 const SkillsCard = () => {
+    const navigate = useNavigate();
+
     return (
         <div className="skills-container">
             <div className="skills-card">
@@ -44,6 +47,18 @@ const SkillsCard = () => {
                         ariaLabel="Technology stack"
                     />
                 </div>
+
+                {/* Button Section */}
+                <button className="view-all-button" onClick={() => navigate('/skills')}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <rect x="3" y="3" width="7" height="7" rx="1" />
+                        <rect x="14" y="3" width="7" height="7" rx="1" />
+                        <rect x="14" y="14" width="7" height="7" rx="1" />
+                        <rect x="3" y="14" width="7" height="7" rx="1" />
+                    </svg>
+                    View All Skills
+                    <span className="arrow">→</span>
+                </button>
             </div>
         </div>
     );

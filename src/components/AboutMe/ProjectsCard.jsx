@@ -1,8 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import CardSwap, { Card } from '../Global/CardSwap';
 import './ProjectsCard.css';
 
 const ProjectsCard = () => {
+    const navigate = useNavigate();
+
     const projects = [
         {
             title: "E-Commerce Platform",
@@ -52,7 +55,7 @@ const ProjectsCard = () => {
                         Transforming ideas into elegant solutions. Each project represents a commitment to excellence and innovation.
                     </p>
 
-                    <button className="view-all-button">
+                    <button className="view-all-button" onClick={() => navigate('/projects')}>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                             <rect x="3" y="3" width="7" height="7" rx="1" />
                             <rect x="14" y="3" width="7" height="7" rx="1" />

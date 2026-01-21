@@ -9,11 +9,10 @@ import Starfield from '@/components/Homepage/Starfield';
 import Iridescence from '@/components/Iridescence';
 
 function AboutMe() {
-
     return (
         <div className="about-me-container">
             <div className="plasma-container-main">
-                {/* <LightRays
+                <LightRays
                     raysOrigin="top-center"
                     raysColor="#ffffff"
                     raysSpeed={0.5}
@@ -27,14 +26,14 @@ function AboutMe() {
                     pulsating={false}
                     fadeDistance={1}
                     saturation={1}
-                /> */}
+                />
                 <Iridescence
                     color={[1, 1, 1]}
                     mouseReact
                     amplitude={0.1}
                     speed={1}
                 />
-                {/* <Starfield starCount={1000} /> */}
+
                 {/* <Plasma
                     color="#1a1a3e"
                     speed={0.3}
